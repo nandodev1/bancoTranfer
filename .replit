@@ -1,0 +1,2 @@
+language = "bash"
+run = "mcs --output main.exe $(find | grep cs$) && mono main.exe"
