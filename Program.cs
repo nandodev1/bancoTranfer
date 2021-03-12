@@ -23,7 +23,7 @@ namespace DIO.Bank
                         break;
                         case "C":
                         break;
-                        case "":
+                        case "X":
                         break;
 
                         default:
@@ -42,10 +42,12 @@ namespace DIO.Bank
                 Console.WriteLine("2- Inerir nova conta");
                 Console.WriteLine("3- Transsferir");
                 Console.WriteLine("4- sacar");
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.WriteLine("");
-                return "x";
+                Console.WriteLine("5- Depositar");
+                Console.WriteLine("c- Linpar tela");
+                Console.WriteLine("x- Sair");
+
+                string opcaoUsuario = Console.ReadLine().ToUpper;
+                return opcaoUsuario;
             }
     }
 }
