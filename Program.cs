@@ -1,9 +1,12 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 
 namespace DIO.Bank
 {
     class Program
     {
+        static List<Conta> listContas = new List<Conta>();
+
         static void Main(string[] args)
         {
                 string opcaoUsuario = ObterOpcaoUsuario();
@@ -15,7 +18,7 @@ namespace DIO.Bank
                           // ListarConta();
                         break;
                         case "2":
-                          // InserirConta();
+                          InserirConta();
                         break;
                         case "3":
                           // Transferir();
@@ -39,6 +42,30 @@ namespace DIO.Bank
                 Console.ReadLine();
             
         }
+
+        private static void InserirConta()
+        {
+          Console.WriteLine("Inserir Nova Cela");
+          Console.Write("Digite 1 para conta fisica e 2 para conta juridica: ");
+          int entradaTipoConta = int.Parse(Console.ReadLine());
+
+
+          Console.Write("Digite o Nome do Cliente: ");
+          string entradaNome = Console.ReadLine();
+
+          Console.Write("Digite saldo inicial: ");
+          double entradasaldo = double.Parse(Console.ReadLine());
+
+          Console.Write("Digite Créédito: ");
+          double entradaCredito = double.Parse(Console.ReadLine());
+
+          Conta conta = new Conta(tipoConta: entradaTipoConta,
+                                  saldo: entradasaldo,
+                                  credito:entradaCredito,
+                                  nome: entradaNome);
+
+        }
+
         private static string ObterOpcaoUsuario()
             {
                 Console.WriteLine();
